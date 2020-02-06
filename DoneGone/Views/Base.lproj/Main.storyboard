@@ -29,7 +29,14 @@
                             <outlet property="delegate" destination="yMa-Hf-V5t" id="W4M-RZ-UTj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="DoneGone" id="Jgn-pr-cz5"/>
+                    <navigationItem key="navigationItem" title="DoneGone" id="Jgn-pr-cz5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ijF-hQ-3FA">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="addNewItem:" destination="yMa-Hf-V5t" id="Vuc-wq-hxL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJy-nL-sbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
