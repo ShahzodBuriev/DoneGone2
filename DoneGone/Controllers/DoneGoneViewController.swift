@@ -9,13 +9,19 @@
 import UIKit
 
 class DoneGoneViewController: UITableViewController {
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
     var itemArray = [Item]()
     
-    let defults = UserDefaults.standard
+       
+  
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         
+     
+        
+                
         let newItem = Item()
         newItem.title = "Mike Posner"
         itemArray.append(newItem)
@@ -96,8 +102,17 @@ class DoneGoneViewController: UITableViewController {
             let newItem = Item()
             newItem.title = textField.text!
             self.itemArray.append(newItem)
-            self.defults.set(self.itemArray, forKey: "ToDoListArray")
+       let encoder = PropertyListEncoder()
             
+            do{
+                let data = try encoder.encode(self.itemArray)
+                try data.write(to: self.dataFilePath!)
+            }
+            
+            catch
+            {
+                print("Error encoding item array")
+            }
             self.tableView.reloadData()
               
     }
