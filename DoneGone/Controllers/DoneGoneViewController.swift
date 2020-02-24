@@ -135,7 +135,10 @@ class DoneGoneViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-
+func change()
+{
+    
+    }
     
     }
 
